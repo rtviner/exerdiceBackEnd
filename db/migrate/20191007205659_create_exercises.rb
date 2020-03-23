@@ -5,8 +5,8 @@ class CreateExercises < ActiveRecord::Migration[5.1]
     	t.string :titles, array: true
     	t.string :partnerExercise
     	t.string :setReps, array: true
-    	t.string :tips, array: true
-
+      t.string :tips, array: true
+      
       t.timestamps 
     end
   end

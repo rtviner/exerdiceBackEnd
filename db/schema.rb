@@ -10,17 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191008182327) do
+ActiveRecord::Schema.define(version: 20200323224432) do
+
+  create_table "encouragements", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.integer "number"
     t.string "titles"
     t.string "partnerExercise"
-    t.string "setReps"
+    t.string "setsReps"
     t.string "tips"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "rolls"
   end
 
 end
