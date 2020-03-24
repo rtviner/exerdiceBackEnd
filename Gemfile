@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rb-readline'
 gem 'responders'
 gem 'webpacker', '>= 4.0.x'
+gem 'rails_12factor', group: :production
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
