@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20200323224432) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "encouragements", force: :cascade do |t|
     t.string "message"
     t.datetime "created_at", null: false
@@ -20,10 +23,10 @@ ActiveRecord::Schema.define(version: 20200323224432) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer "number"
-    t.string "titles"
+    t.string "titles", array: true
     t.string "partnerExercise"
-    t.string "setsReps"
-    t.string "tips"
+    t.string "setsReps", array: true
+    t.string "tips", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
