@@ -3,8 +3,14 @@ class Api::EncouragementsController < ApplicationController
 		render :json => Encouragement.all
 	end
 
+	# if id is not present return random encouragement
 	def show
-		render :json => Encouragement.find(params[:id])
+		render :json => Encouragement.find_by(id: params[:id]) || Encouragement.all.sample
+	end
+
+	def random
+		@encouragement = Encouragement.order('RAND()').first
+		render :show
 	end
 
 	def create
